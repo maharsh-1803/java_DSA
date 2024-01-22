@@ -1,7 +1,10 @@
+import java.util.Arrays;
+
 public class inversionCount {
     public static void main(String[] args) {
         int [] arr = {1,20,6,4,5};
         System.out.println(inversionCount(arr));
+//        System.out.println(Arrays.toString(arr));
     }
     public static int inversionCount(int [] arr)
     {
@@ -11,6 +14,9 @@ public class inversionCount {
             {
                 if(arr[i]>arr[j])
                 {
+//                    int temp  =arr[i];
+//                    arr[i] = arr[j];
+//                    arr[j] = temp;
                     count++;
                 }
             }
