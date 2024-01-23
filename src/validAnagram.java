@@ -2,29 +2,27 @@ public class validAnagram {
     public static void main(String[] args) {
         String s = "mann";
         String t = "amnn";
-        int arr[] = new int [25];
-        System.out.println(arr[12]--);
-        System.out.println(arr[13]);
+        System.out.println(isValidAnagram(s,t));
+    }
+    public static boolean isValidAnagram(String s,String t)
+    {
+        if(s.length()!=t.length())
+        {
+            return false;
+        }
+        int [] map = new int[26];
         for(char x:s.toCharArray())
         {
-            System.out.println(arr[x-'a']++);
+            map[x-'a']++;
         }
-
+        for (char x:t.toCharArray()) {
+            map[x-'a']--;
+        }
+        for(int i:map) {
+            if (i != 0) {
+                return false;
+            }
+        }
+        return true;
     }
-//    public static boolean isValidAnagram(String s,String t)
-//    {
-//        if(s.length()!=t.length())
-//        {
-//            return false;
-//        }
-//        int [] map = new int[26];
-//        for(char x:s.toCharArray())
-//        {
-//            map[x-'a']++;
-//        }
-//        for (char x:t.toCharArray()) {
-//            System.out.println(map[x-'a']);
-//        }
-//        return true;
-//    }
 }
