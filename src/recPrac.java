@@ -2,7 +2,7 @@ public class recPrac {
     public static void main(String[] args) {
 //        message();
 //        print(1);
-        System.out.println(fibo(6));
+        System.out.println(fibo(45));
     }
 //    static void message()
 //    {
