@@ -79,6 +79,19 @@ public class Graph_demo {
             }
         }
     }
+    public static void dfs(ArrayList<Edge> graph[] , int curr, boolean vis[] )
+    {
+        System.out.print(curr+" ");
+        vis[curr]=true;
+        for (int i = 0; i < graph[curr].size(); i++) {
+            Edge e = graph[curr].get(i);
+            if(vis[e.dst]==false)
+            {
+                dfs(graph,e.dst,vis);   
+            }
+
+        }
+    }
     public static void main(String[] args) {
 //        int V = 4;
 //        ArrayList<Edge> graph[] = new ArrayList[V];
@@ -90,8 +103,11 @@ public class Graph_demo {
 //        }
         int V=7;
         ArrayList<Edge> graph[] = new ArrayList[V];
+        boolean vis[]  = new boolean[V];
         createGraph(graph);
-        bfs(graph,V);
+//        bfs(graph,V);
+        dfs(graph,0,vis);
+
     }
 }
 
